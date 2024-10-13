@@ -77,14 +77,15 @@ header > section{
     width: 100%;
 }
 
-section.sideBar nav{
+/* SideBar currently gets sqaushed due to there not being enough room if I decrease the width. */
+.sideBar nav{
     background: rgb(51, 51, 51);
     width: 15%;
     min-height: 100vh;
     float: left;
 }
 
-section nav ul li, section nav ul li a{
+.sideBar nav ul li, section nav ul li a{
     color: white;
     text-decoration: none;
     font-family: Helvetica, sans-serif;
