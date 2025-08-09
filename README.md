@@ -9,11 +9,3 @@ You can view the live portfolio here: [https://shawn-scamell.github.io/](https:/
 
 ## 📂 Structure
 The project is built with **HTML** and **CSS**, using a clean, responsive layout.  
-Key directories and files:
-├── css/
-│   └── style.css       # Main stylesheet (includes normalize.css for cross-browser consistency)
-├── images/             # Thumbnails, screenshots, and icons
-├── pages/
-│   ├── index.html       # Home page
-│   └── portfolio.html   # Portfolio/projects page
-└── README.md            # Project documentation
