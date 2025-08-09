@@ -419,3 +419,94 @@ section.mainBody p{
     color: rgb(86, 90, 246);
     text-decoration: none;
 }
+
+/* Container: responsive grid of “small boxes” */
+.project-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  justify-items: center; /* center cards inside grid cells */
+}
+
+/* Card */
+.project-card.vertical{
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;            /* image above text */
+  transition: transform .18s ease, box-shadow .18s ease;
+
+  /* Keep the card “small” like a BBC box */
+  max-width: clamp(220px, 28vw, 360px);
+  width: 100%;
+}
+.project-card.vertical:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+}
+
+/* Thumbnail: keep 50% width, show the whole image, and avoid odd cropping */
+.project-card .card-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;                  /* subtle letterbox */
+  height: 140px;                     /* consistent thumbnail box */
+}
+.project-card .card-image img{
+  width: 50%;                        /* your requirement */
+  height: 100%;
+  object-fit: contain;               /* show full image */
+  display: block;
+}
+
+/* Body */
+.project-card .card-body{
+  padding: .75rem .9rem 1rem;
+}
+
+/* Headline (multi-line clamp like news cards) */
+.project-card .headline{
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.25;
+  margin: 0 0 .5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;             /* clamp to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.project-card .headline a{
+  color: #111;
+  text-decoration: none;
+}
+.project-card .headline a:hover{ text-decoration: underline; }
+
+/* Meta row (e.g., GitHub link) */
+.project-card .meta{
+  display: flex;
+  gap: .8rem;
+  align-items: center;
+  font-size: clamp(.78rem, 1.5vw, .88rem);
+  color: #666;
+}
+.project-card .meta .source{
+  color: #666;
+  text-decoration: none;
+}
+.project-card .meta .source:hover{ text-decoration: underline; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .project-card.vertical{ transition: none; }
+}
+
+/* Optional: pack more cards on very small screens */
+@media (max-width: 420px){
+  .project-list{ grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+}
