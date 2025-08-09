@@ -67,7 +67,17 @@ h1.title{
     color: white;
 }
 
+h2.featured{
+    font-size: 30px;
+    /* text-align: center; */
+    color: white;
+}
+
 section.title{
+    padding-top: 50px;
+}
+
+section.featured{
     padding-top: 50px;
 }
 
